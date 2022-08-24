@@ -31,7 +31,7 @@ namespace Student
             else
             {
                 Console.WriteLine($"DISAPPROVED");
-                Console.WriteLine($"You need {60 - finalNotes} poits");
+                Console.WriteLine($"You need {60 - finalNotes} points");
             }
         }
     }
