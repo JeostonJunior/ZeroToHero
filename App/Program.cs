@@ -15,7 +15,6 @@ namespace MyApp
             product.Quantity = 25;
 
             Console.WriteLine($"{product}");
-
         }
     }
 }
