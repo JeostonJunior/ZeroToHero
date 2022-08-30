@@ -22,6 +22,15 @@ namespace Product
 
             Console.WriteLine($"{product}");
 
+            Products productNewInicialization = new Products
+            {
+                Name = "Maça",
+                Price = 12.00,
+                Quantity = 10
+            };
+
+            Console.WriteLine($"{productNewInicialization}");
+
             // product.AlterQantity();
             // Console.WriteLine($"{product}");
 
