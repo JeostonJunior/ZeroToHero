@@ -1,48 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-
-class Dio
+﻿class Dio
 {
     static void Main(string[] args)
     {
-        List<string> NumbersList = new List<string>();
+
+        string[] vetor = new string[2];
 
         int qt = int.Parse(Console.ReadLine());
 
-        for (int j = 0; j < qt; j++)
+        for (int i = 0; i < qt; i++)
         {
-            var A = Console.ReadLine();
-            var B = Console.ReadLine();
+            vetor = Console.ReadLine().Split(" ");
 
-            NumbersList.Add(A.ToString());
-            NumbersList.Add(B.ToString());
+            string A = vetor[0];
+            string B = vetor[1];
 
-            if (NumbersList[1].Count() > NumbersList[0].Count())
+            if (A.EndsWith(B))
             {
-                Console.WriteLine($"nao encaixa");
-                NumbersList = new List<string>();
+                Console.WriteLine("encaixa");
             }
             else
             {
-                var contador = NumbersList[0].Count() - 1;
-                var sum = 0;
-                for (var i = NumbersList[1].Count() - 1; i > 0; i--)
-                {
-                    if (NumbersList[1][i] == NumbersList[0][contador])
-                    {
-                        sum++;
-                        contador--;
-                    }
-                    else
-                    {
-                        Console.WriteLine($"nao encaixa");
-                    }
-                }
-                if (sum == NumbersList[1].Count() - 1)
-                {
-                    Console.WriteLine($"encaixa");
-                }
-                NumbersList = new List<string>();
+                Console.WriteLine("nao encaixa");
             }
         }
     }
