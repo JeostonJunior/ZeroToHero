@@ -13,23 +13,24 @@ namespace Product
             Console.WriteLine($"Enter the product price:");
             double productPrice = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            // Console.WriteLine($"Enter the product quantity:");
-            // int productQuantity = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine($"Enter the product quantity:");
+            int productQuantity = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             // Products product = new Products(productName, productPrice, productQuantity);
 
             Products product = new Products(productName, productPrice);
+            product = new Products(productName, productPrice, productQuantity);
 
             Console.WriteLine($"{product}");
 
-            Products productNewInicialization = new Products
-            {
-                Name = "Maça",
-                Price = 12.00,
-                Quantity = 10
-            };
+            // Products productNewInicialization = new Products
+            // {
+            //     Name = "Maça",
+            //     Price = 12.00,
+            //     Quantity = 10
+            // };
 
-            Console.WriteLine($"{productNewInicialization}");
+            // Console.WriteLine($"{productNewInicialization}");
 
             // product.AlterQantity();
             // Console.WriteLine($"{product}");
