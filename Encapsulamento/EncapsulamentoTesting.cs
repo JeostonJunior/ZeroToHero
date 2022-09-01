@@ -15,39 +15,60 @@ namespace Encapsulamento
             _quantity = quantity;
         }
 
-        public string GetName()
+        ///Novo Metodo de encapsular
+        public string Name
         {
-            return _name;
+            get { return _name; }
+            set { _name = value; }
+        }
+        ///Fim do novo Metodo de encapsular
+
+        ///Metodo antigo de encapsular
+        // public string GetName()
+        // {
+        //     return _name;
+        // }
+
+        // public void SetName(string name)
+        // {
+        //     _name = name;
+        // }
+        ///Fim do metodo antigo de encapsular
+
+        public double Price
+        {
+            get { return _price; }
+            set { _price = value; }
         }
 
-        public void SetName(string name)
-        {
-            _name = name;
-        }
+        // public double GetPrice()
+        // {
+        //     return _price;
+        // }
 
-        public double GetPrice()
-        {
-            return _price;
-        }
+        // public void SetPrice(double price)
+        // {
+        //     _price = price;
+        // }
 
-        public void SetPrice(double price)
+        public int Quantity
         {
-            _price = price;
+            get { return _quantity; }
+            set { _quantity = value; }
         }
+        // public int GetQuantity()
+        // {
+        //     return _quantity;
+        // }
 
-        public int GetQuantity()
-        {
-            return _quantity;
-        }
-
-        public void SetQuantity(int quantity)
-        {
-            _quantity = quantity;
-        }
+        // public void SetQuantity(int quantity)
+        // {
+        //     _quantity = quantity;
+        // }
 
         public override string ToString()
         {
-            return $"_name: {_name} Price: {_price} Quantity: {_quantity} Amount: {Amount()}";
+            return $"Name: {_name} Price: {_price} Quantity: {_quantity} Amount: {Amount()}";
         }
         public double Amount()
         {
