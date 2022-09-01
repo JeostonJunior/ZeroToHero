@@ -3,7 +3,7 @@ namespace Encapsulamento
     public class EncapsulamentoProduct
     {
         private string _name;
-        private double _price;
+        public double Price { get; set; }
         public int Quantity { get; private set; }
 
         public EncapsulamentoProduct() { }
@@ -11,7 +11,7 @@ namespace Encapsulamento
         public EncapsulamentoProduct(string name, double price, int quantity)
         {
             _name = name;
-            _price = price;
+            Price = price;
             Quantity = quantity;
         }
 
@@ -35,11 +35,12 @@ namespace Encapsulamento
         // }
         ///Fim do metodo antigo de encapsular
 
-        public double Price
-        {
-            get { return _price; }
-            set { _price = value; }
-        }
+        ///Usando Properties
+        // public double Price
+        // {
+        //     get { return _price; }
+        //     set { _price = value; }
+        // }
 
         // public double GetPrice()
         // {
@@ -64,12 +65,12 @@ namespace Encapsulamento
 
         public override string ToString()
         {
-            return $"Name: {_name} Price: {_price} Quantity: {Quantity} Amount: {Amount()}";
+            return $"Name: {_name} Price: {Price} Quantity: {Quantity} Amount: {Amount()}";
         }
         public double Amount()
         {
             double amount;
-            amount = _price * Quantity;
+            amount = Price * Quantity;
             return amount;
         }
     }
