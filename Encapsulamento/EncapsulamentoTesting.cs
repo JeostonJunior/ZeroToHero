@@ -52,17 +52,6 @@ namespace Encapsulamento
         //     _price = price;
         // }
 
-
-        // public int GetQuantity()
-        // {
-        //     return _quantity;
-        // }
-
-        // public void SetQuantity(int quantity)
-        // {
-        //     _quantity = quantity;
-        // }
-
         public override string ToString()
         {
             return $"Name: {_name} Price: {Price} Quantity: {Quantity} Amount: {Amount()}";
