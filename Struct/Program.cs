@@ -8,7 +8,7 @@ namespace Struct
         {
             Point p1;
             p1.X = 10;
-            p2.Y = 20;
+            p1.Y = 20;
             Console.WriteLine($"{p1}");
         }
     }
