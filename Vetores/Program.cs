@@ -6,20 +6,26 @@ namespace Vetores
     {
         static void Main(string[] args)
         {
-            double[] vetor;
+            Products[] vetor;
+
             int n = int.Parse(Console.ReadLine());
 
-            vetor = new double[n];
+            vetor = new Products[n];
 
             for (int i = 0; i < n; i++)
             {
-                vetor[i] = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.WriteLine($"Nome do Produto:");
+                string name = Console.ReadLine();
+
+                Console.WriteLine($"Valor do Produto:");
+                double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                vetor[i] = new Products(name, price);
             }
 
             double sum = 0.0;
             for (int i = 0; i < n; i++)
             {
-                sum += vetor[i];
+                sum += vetor[i].Price;
             }
             Console.WriteLine($"A soma de todos os numeros é {sum.ToString("F2", CultureInfo.InvariantCulture)}");
 
