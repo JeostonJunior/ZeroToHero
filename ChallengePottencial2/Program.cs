@@ -2,7 +2,6 @@
 {
     static void Main(string[] args)
     {
-
         string[] vetor = new string[2];
 
         int qt = int.Parse(Console.ReadLine());
@@ -24,5 +23,4 @@
             }
         }
     }
-
 }
