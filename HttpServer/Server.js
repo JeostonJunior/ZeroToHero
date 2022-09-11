@@ -1,5 +1,8 @@
 const http = require("http");
 
+//REQ = Request --- RES = Response
+//req.url pega o cabeçalho do url
+//res.end responde ao req diretamente no navegador
 const server = http.createServer((req, res) => {
     switch (req.url.toUpperCase()) {
         case "/":
@@ -17,6 +20,8 @@ const server = http.createServer((req, res) => {
     }
 });
 
+//Listen precisa de uma porta e um endereço para funcionar
+//O servidor http está rodando na porta 3001 e no endereço localhost
 server.listen(3001, "localhost", () => {
     console.log("Hospedado em http://localhost:3001");
     console.log("ctrl + c para sair");
