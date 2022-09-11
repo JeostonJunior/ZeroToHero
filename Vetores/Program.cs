@@ -32,6 +32,7 @@ namespace Vetores
             double avg = sum / n;
 
             Console.WriteLine($"A media dos valores é {avg.ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.ReadLine();
         }
     }
 }
