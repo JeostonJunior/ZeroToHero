@@ -8,7 +8,7 @@ namespace DesafioMatriz
         {
             Console.WriteLine($"Entre com a dimensão da Matriz:");
             string[] dimensao = Console.ReadLine().Split(' ');
-            int[,] matriz = new int[int.Parse(dimensao[0]),int.Parse(dimensao[1])];
+            int[,] matriz = new int[int.Parse(dimensao[0]), int.Parse(dimensao[1])];
 
             for (int i = 0; i < int.Parse(dimensao[0]); i++)
             {
