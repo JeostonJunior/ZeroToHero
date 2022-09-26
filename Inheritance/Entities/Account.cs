@@ -13,9 +13,15 @@
             Balance = balance;
         }
 
-        public void Withdraw (double amount)
+        //public void Withdraw (double amount)
+        //{
+        //    Balance -= amount;
+        //}
+
+        //VIRTUAL - ESPAÇO PARA SOBREPOSIÇÃO
+        public virtual void Withdraw (double amount)
         {
-            Balance -= amount;
+            Balance -= amount + 5.0;
         }
 
         public void Deposit (double amount)

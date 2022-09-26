@@ -1,4 +1,6 @@
-﻿namespace Inheritance.Entities
+﻿using System;
+
+namespace Inheritance.Entities
 {
     public class SavingsAccount : Account
     {
@@ -12,6 +14,11 @@
         public void UpdateBalance ()
         {
             Balance += Balance * InterestRate;
+        }
+
+        public override void Withdraw (double amount)
+        {
+            Balance -= amount;
         }
     }
 }
