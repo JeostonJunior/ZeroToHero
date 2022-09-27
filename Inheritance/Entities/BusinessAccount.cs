@@ -2,7 +2,7 @@
 {
     public class BusinessAccount : Account
     {
-        public double LoanLimit { get; protected set; }
+        public double LoanLimit { get; set; }
         public BusinessAccount (double loan, int number, string holder, double balance) : base(number, holder, balance)
         {
             LoanLimit = loan;

@@ -2,9 +2,9 @@
 
 namespace Inheritance.Entities
 {
-    public class SavingsAccount : Account
+    sealed class SavingsAccount : Account
     {
-        public double InterestRate { get; protected set; }
+        public double InterestRate { get; set; }
 
         public SavingsAccount (int number, string holder, double balance, double interestRate) : base(number, holder, balance)
         {
@@ -16,7 +16,8 @@ namespace Inheritance.Entities
             Balance += Balance * InterestRate;
         }
 
-        public override void Withdraw (double amount)
+        //ESSE METODO NÃO PODE SER SOBRESCRITA NOVAMENTE EM OUTRA CLASSE 
+        public sealed override void Withdraw (double amount)
         {
             base.Withdraw (amount);
             Balance -= 2.00;
