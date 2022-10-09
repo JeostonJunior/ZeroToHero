@@ -1,4 +1,5 @@
 ﻿using System;
+using Exceptions.Entities.Exceptions;
 
 namespace Exceptions.Entities
 {
@@ -14,6 +15,10 @@ namespace Exceptions.Entities
         }
         public Reservation (int roomNumber, DateTime checkIn, DateTime checkOut) : this (roomNumber)
         {
+            if (checkOut <= checkIn)
+            {
+                throw new DomainException("A data de Check-out deve ser maior que Check-in;");
+            }
             CheckIn = checkIn;
             CheckOut = checkOut;
         }
@@ -22,23 +27,19 @@ namespace Exceptions.Entities
             TimeSpan duration = CheckOut.Subtract(CheckIn);
             return (int)duration.TotalDays;
         }
-        public string UpdateDates (DateTime checkIn, DateTime checkOut)
+        public void UpdateDates (DateTime checkIn, DateTime checkOut)
         {
             DateTime now = DateTime.Now;
             if (checkOut < now || checkIn < now)
             {
-                return "Erro na Reserva: As datas de reserva devem ser futuras;";
+                throw new DomainException("As datas de reserva devem ser futuras;");
             }
             else if (checkOut <= checkIn)
             {
-                return "Erro na Reserva: A data de Check-out deve ser maior que Check-in;";
+                throw new DomainException("A data de Check-out deve ser maior que Check-in;");
             }
-            else
-            {
-                CheckIn = checkIn;
-                CheckOut = checkOut;
-                return "Reserva Atualizada";
-            }
+            CheckIn = checkIn;
+            CheckOut = checkOut;
         }
         public override string ToString ()
         {
