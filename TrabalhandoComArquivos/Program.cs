@@ -7,7 +7,7 @@ namespace TrabalhandoComArquivos
     {
         static void Main (string[] args)
         {
-            string sourcePath = @"c:\Users\jeoston.araujo\Documents\ZeroToHero\TrabalhandoComArquivos\text1.txt";
+            string sourcePath = @"c:\Users\jeoston.araujo\Documents\ZeroToHero\TrabalhandoComArquivos\MyFolder";
             string targetPath = @"c:\Users\jeoston.araujo\Documents\ZeroToHero\TrabalhandoComArquivos\text2.txt";
             //FileStream fs = null;
             //StreamReader sr = null;
@@ -26,27 +26,41 @@ namespace TrabalhandoComArquivos
             //    Console.WriteLine(e.Message);
             //}
 
+            //try
+            //{
+            //    //string[] content = File.ReadAllLines(sourcePath);
+            //    using (StreamWriter sw = File.AppendText(targetPath))
+            //    {                    
+            //        //StreamReader content = new StreamReader(sourcePath);
+            //        //string content2 = content.ReadToEnd();
+            //        sw.WriteLine(File.ReadAllText(sourcePath).ToString().ToUpper());
+            //    }
+            //    using (FileStream fs = new FileStream(targetPath, FileMode.Open))
+            //    {
+            //        using (StreamReader sr = new StreamReader(fs))
+            //        {
+            //            Console.WriteLine(sr.ReadToEnd());
+            //        }
+            //    }
+            //}
+            //catch (Exception)
+            //{
+
+            //    throw;
+            //}
             try
             {
-                //string[] content = File.ReadAllLines(sourcePath);
-                using (StreamWriter sw = File.AppendText(targetPath))
-                {                    
-                    //StreamReader content = new StreamReader(sourcePath);
-                    //string content2 = content.ReadToEnd();
-                    sw.WriteLine(File.ReadAllText(sourcePath).ToString().ToUpper());
-                }
-                using (FileStream fs = new FileStream(targetPath, FileMode.Open))
-                {
-                    using (StreamReader sr = new StreamReader(fs))
-                    {
-                        Console.WriteLine(sr.ReadToEnd());
-                    }
-                }
-            }
-            catch (Exception)
-            {
+                Directorys directory = new Directorys(sourcePath);
+                directory.UsingDirectoriesDirectory();
 
-                throw;
+                directory.UsingFilesDirectory();
+
+                directory.CreateFolderDirectory(@"\teste2");
+
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e.Message);
             }
 
 
