@@ -8,12 +8,34 @@ namespace TrabalhandoComArquivos
         static void Main (string[] args)
         {
             string sourcePath = @"c:\Users\jeoston.araujo\Documents\ZeroToHero\TrabalhandoComArquivos\text1.txt";
-            //string targetPath = @"c:\Users\jeoston.araujo\Documents\ZeroToHero\TrabalhandoComArquivos\text3.txt";
+            string targetPath = @"c:\Users\jeoston.araujo\Documents\ZeroToHero\TrabalhandoComArquivos\text2.txt";
             //FileStream fs = null;
             //StreamReader sr = null;
+            //try
+            //{
+            //    using (FileStream fs = new FileStream(sourcePath, FileMode.Open))
+            //    {
+            //        using (StreamReader sr = new StreamReader(fs))
+            //        {
+            //            Console.WriteLine(sr.ReadToEnd());
+            //        }
+            //    }
+            //}
+            //catch (IOException e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
+
             try
             {
-                using (FileStream fs = new FileStream(sourcePath, FileMode.Open))
+                //string[] content = File.ReadAllLines(sourcePath);
+                using (StreamWriter sw = File.AppendText(targetPath))
+                {                    
+                    //StreamReader content = new StreamReader(sourcePath);
+                    //string content2 = content.ReadToEnd();
+                    sw.WriteLine(File.ReadAllText(sourcePath).ToString().ToUpper());
+                }
+                using (FileStream fs = new FileStream(targetPath, FileMode.Open))
                 {
                     using (StreamReader sr = new StreamReader(fs))
                     {
@@ -21,9 +43,10 @@ namespace TrabalhandoComArquivos
                     }
                 }
             }
-            catch (IOException e)
+            catch (Exception)
             {
-                Console.WriteLine(e.Message);
+
+                throw;
             }
 
 
