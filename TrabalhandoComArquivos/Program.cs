@@ -5,10 +5,24 @@ namespace TrabalhandoComArquivos
 {
     internal class Program
     {
-        static void Main (string[] args)
+        static void Main ()
         {
-            string sourcePath = @"c:\Users\jeoston.araujo\Documents\ZeroToHero\TrabalhandoComArquivos\MyFolder";
+            string sourcePath = @"c:\Users\jeoston.araujo\Documents\ZeroToHero\TrabalhandoComArquivos\MyFolder\text1.txt";
             string targetPath = @"c:\Users\jeoston.araujo\Documents\ZeroToHero\TrabalhandoComArquivos\text2.txt";
+
+            try
+            {
+                PathCommands path = new PathCommands(sourcePath);
+                path.UsingPathCommands();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
             //FileStream fs = null;
             //StreamReader sr = null;
             //try
@@ -26,6 +40,7 @@ namespace TrabalhandoComArquivos
             //    Console.WriteLine(e.Message);
             //}
 
+            //USING FILESTREAM AND STREAMREADER
             //try
             //{
             //    //string[] content = File.ReadAllLines(sourcePath);
@@ -48,23 +63,25 @@ namespace TrabalhandoComArquivos
 
             //    throw;
             //}
-            try
-            {
-                Directorys directory = new Directorys(sourcePath);
-                directory.UsingDirectoriesDirectory();
 
-                directory.UsingFilesDirectory();
+            //USING DIRECTORY AND DIRECTORYINFO
+            //try
+            //{
+            //    Directorys directory = new Directorys(sourcePath);
+            //    directory.UsingDirectoriesDirectory();
 
-                directory.CreateFolderDirectory(@"\teste2");
+            //    directory.UsingFilesDirectory();
 
-            }
-            catch (IOException e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            //    directory.CreateFolderDirectory(@"\teste2");
+
+            //}
+            //catch (IOException e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
 
 
-
+            //USING FILE AND FILEINFO
             //try
             //{
             //    ////FileInfo fileInfo = new FileInfo(sourcePath);
@@ -81,17 +98,10 @@ namespace TrabalhandoComArquivos
             //    //sr = File.OpenText(sourcePath);
             //    //string line = sr.ReadToEnd();
             //    //Console.WriteLine(line);
-
-
-
-
-
-
             //}
             //catch (IOException e)
             //{
             //    Console.WriteLine($"An error occurred: {e.Message}");
-
             //}
             //finally
             //{
