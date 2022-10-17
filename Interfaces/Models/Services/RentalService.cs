@@ -1,18 +1,22 @@
-﻿using System;
+﻿using Interfaces.Models.Entities;
+using System;
 
-namespace Interfaces.Models.Entities
+namespace Interfaces.Models.Services
 {
     public class RentalService
     {
-        public double HourValue { get; set; }
-        public double DayValue { get; set; }
+        public double HourValue { get; private set; }
+        public double DayValue { get; private set; }
+        
+        private ITaxService _taxService;
 
-        private BrazilTaxService _brazilTaxService = new BrazilTaxService();
-        public RentalService (double hourValue, double dayValue)
+        public RentalService (double hourValue, double dayValue, ITaxService taxService)
         {
             HourValue = hourValue;
             DayValue = dayValue;
+            _taxService = taxService;
         }
+
         public void ProcessInvoice (CarRental carRental)
         {
             TimeSpan duration = carRental.Final.Subtract(carRental.Initial);
@@ -27,7 +31,7 @@ namespace Interfaces.Models.Entities
                 basicPayment = DayValue * Math.Ceiling(duration.TotalDays);
             }
 
-            double tax = _brazilTaxService.Tax(basicPayment);
+            double tax = _taxService.Tax(basicPayment);
 
             carRental.Invoice = new Invoice(basicPayment, tax);
         }

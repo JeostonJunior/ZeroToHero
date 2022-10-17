@@ -1,6 +1,6 @@
-﻿namespace Interfaces.Models.Entities
+﻿namespace Interfaces.Models.Services
 {
-    public class BrazilTaxService
+    public class BrazilTaxService : ITaxService
     {
         public double Tax (double ammount)
         {

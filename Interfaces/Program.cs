@@ -1,4 +1,5 @@
 ﻿using Interfaces.Models.Entities;
+using Interfaces.Models.Services;
 using System;
 using System.Globalization;
 
@@ -22,7 +23,7 @@ namespace Interfaces
 
             CarRental carRental = new CarRental(datePickup, dateReturn, new Vehicle(carModel));
 
-            RentalService rentalService = new RentalService(hourPrice, dayPrice);
+            RentalService rentalService = new RentalService(hourPrice, dayPrice, new BrazilTaxService());
 
             rentalService.ProcessInvoice(carRental);
 
