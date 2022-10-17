@@ -6,6 +6,7 @@ namespace Interfaces.Models.Entities
     {
         public double HourValue { get; set; }
         public double DayValue { get; set; }
+
         private BrazilTaxService _brazilTaxService = new BrazilTaxService();
         public RentalService (double hourValue, double dayValue)
         {
