@@ -7,8 +7,8 @@ namespace Interfaces.Models.Services
     {
         public double HourValue { get; private set; }
         public double DayValue { get; private set; }
-        
-        private ITaxService _taxService;
+
+        private readonly ITaxService _taxService;
 
         public RentalService (double hourValue, double dayValue, ITaxService taxService)
         {
@@ -16,7 +16,6 @@ namespace Interfaces.Models.Services
             DayValue = dayValue;
             _taxService = taxService;
         }
-
         public void ProcessInvoice (CarRental carRental)
         {
             TimeSpan duration = carRental.Final.Subtract(carRental.Initial);
