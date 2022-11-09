@@ -1,0 +1,4 @@
+Ronaldo,10
+Ronaldo,10
+Ronaldo,5
+Carlos,2
